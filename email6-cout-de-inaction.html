@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ce que ça te coûte de ne rien faire — Charlotte Billioque</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Lato',sans-serif;background:#ffd1d1;color:#000;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .container{max-width:440px;margin:0 auto;padding:0 20px}
+  .hero{padding:40px 0 24px;text-align:center}
+  .hero-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:#d52941;padding:8px 20px;border-radius:30px;margin-bottom:28px}
+  .hero h1{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;line-height:1.2;color:#000;margin-bottom:20px}
+  .hero h1 span{color:#d52941}
+  .hero-sub{font-size:17px;color:#333;line-height:1.6}
+  .divider{width:60px;height:3px;background:#d52941;margin:24px auto;border-radius:2px}
+  .card{background:#fff;border-radius:16px;padding:28px 22px;margin:18px 0;border:2px solid #000}
+  .card h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;line-height:1.3;color:#000;margin-bottom:18px}
+  .card h3{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;line-height:1.3;color:#000;margin-bottom:14px}
+  .card p{font-size:16px;color:#222;margin-bottom:16px;line-height:1.75}
+  .card p:last-child{margin-bottom:0}
+  .card p strong{color:#000;font-weight:700}
+  .card ul{margin:12px 0 16px 20px}
+  .card ul li{font-size:15px;color:#222;line-height:1.7;margin-bottom:8px}
+  .quote{background:#fff;border:2px solid #000;border-radius:16px;padding:24px 22px;margin:18px 0;text-align:center}
+  .quote p{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;line-height:1.5;color:#000;margin-bottom:0}
+  .quote p span{color:#d52941}
+  .pullquote{border-left:4px solid #d52941;padding:18px 22px;margin:24px 0;background:rgba(255,255,255,0.5);border-radius:0 12px 12px 0}
+  .pullquote p{font-size:16px;font-style:italic;color:#000;margin-bottom:0;line-height:1.7}
+  .pullquote .attr{font-style:normal;font-size:13px;color:#666;margin-top:8px}
+  .scenario{background:#f9f5f5;border-radius:14px;padding:24px 22px;margin:20px 0;border-left:4px solid #d52941}
+  .scenario .label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d52941;margin-bottom:10px}
+  .scenario p{font-size:15px;line-height:1.7;color:#222;margin-bottom:10px}
+  .scenario p:last-child{margin-bottom:0}
+  .item{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start}
+  .item .icon{flex-shrink:0;font-size:18px;margin-top:3px}
+  .item .content{flex:1}
+  .item .content strong{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:#000;display:block;margin-bottom:5px}
+  .item .content p{font-size:15px;color:#333;margin-bottom:0;line-height:1.65}
+  .badge-sm{display:inline-block;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d52941;background:rgba(213,41,65,0.1);padding:4px 12px;border-radius:20px;margin-bottom:14px}
+
+  /* TIMELINE */
+  .timeline{position:relative;padding-left:32px;margin:24px 0}
+  .timeline::before{content:'';position:absolute;left:12px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,#ffd1d1,#d52941,#000)}
+  .timeline-item{position:relative;margin-bottom:28px}
+  .timeline-item:last-child{margin-bottom:0}
+  .timeline-item::before{content:'';position:absolute;left:-24px;top:8px;width:12px;height:12px;background:#d52941;border-radius:50%;border:2px solid #fff}
+  .timeline-item .time{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#d52941;margin-bottom:6px}
+  .timeline-item p{font-size:15px;line-height:1.65;color:#333;margin-bottom:8px}
+  .timeline-item p:last-child{margin-bottom:0}
+
+  /* COST */
+  .cost-card{background:#fff;border:2px solid #d52941;border-radius:16px;padding:28px 24px;margin:24px 0}
+  .cost-card .label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d52941;margin-bottom:16px;text-align:center}
+  .cost-line{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #f0f0f0}
+  .cost-line:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .cost-line .emoji{flex-shrink:0;font-size:20px;margin-top:2px}
+  .cost-line .text{flex:1}
+  .cost-line .text strong{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:#000;display:block;margin-bottom:3px}
+  .cost-line .text p{font-size:14px;color:#444;line-height:1.55;margin:0}
+  .cost-total{text-align:center;padding-top:18px;border-top:2px solid #d52941;margin-top:18px}
+  .cost-total p{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#d52941;margin:0}
+
+  .cta{text-align:center;padding:40px 0 50px}
+  .cta p{font-size:16px;color:#333;margin-bottom:20px;line-height:1.7}
+  .cta .big{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#000;margin-bottom:24px;line-height:1.4}
+  .footer{text-align:center;padding:30px 0 40px}
+  .footer .name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#000;margin-bottom:4px}
+  .footer p{font-size:13px;color:#666;line-height:1.6}
+  .logo{text-align:center;padding:30px 0 10px}
+  .logo img{width:60px;height:auto}
+
+  /* === POLISH V3 === */
+  html{scroll-behavior:smooth}
+  .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#d52941,#ff6b6b);width:0;z-index:9999;box-shadow:0 0 10px rgba(213,41,65,0.5)}
+  .card{box-shadow:0 2px 16px rgba(0,0,0,0.06),0 0 20px rgba(213,41,65,0.06),0 0 40px rgba(213,41,65,0.03)}
+  .quote{box-shadow:0 2px 16px rgba(0,0,0,0.06),0 0 20px rgba(213,41,65,0.06),0 0 40px rgba(213,41,65,0.03);position:relative;overflow:hidden}
+  .quote::before{content:'';position:absolute;top:-60%;right:-60%;width:120%;height:120%;background:radial-gradient(circle,rgba(213,41,65,0.04) 0%,transparent 60%);pointer-events:none}
+  .cost-card{box-shadow:0 3px 18px rgba(213,41,65,0.1),0 0 24px rgba(213,41,65,0.06)}
+  .card,.quote,.pillar,.cost-card,.video-card{transition:transform 0.35s ease,box-shadow 0.35s ease}
+  @media(hover:hover){.card:hover,.quote:hover,.pillar:hover,.cost-card:hover,.video-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1),0 0 30px rgba(213,41,65,0.08)}}
+  @keyframes badge-glow{0%,100%{box-shadow:inset 0 0 6px rgba(213,41,65,0.4),0 4px 16px rgba(213,41,65,0.25)}50%{box-shadow:inset 0 0 6px rgba(213,41,65,0.4),0 6px 28px rgba(213,41,65,0.5)}}
+  .hero-badge{animation:badge-glow 3s ease-in-out infinite}
+  .hero h1{animation:hero-reveal 1s ease-out;letter-spacing:-0.5px}
+  .hero-sub{animation:hero-reveal 1s ease-out 0.2s both}
+  @keyframes hero-reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .hero h1 span{background:linear-gradient(135deg,#d52941 0%,#ff6b6b 50%,#d52941 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
+  @keyframes shimmer{0%{background-position:0% center}50%{background-position:100% center}100%{background-position:0% center}}
+  .cta .big{background:linear-gradient(135deg,#000 30%,#d52941 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .divider{display:flex;align-items:center;justify-content:center;gap:0;width:120px;margin:28px auto;height:auto;background:none;border-radius:0}
+  .divider::before,.divider::after{content:'';flex:1;height:1.5px;background:linear-gradient(90deg,transparent,#d52941)}
+  .divider::after{background:linear-gradient(90deg,#d52941,transparent)}
+  .divider-diamond{width:6px;height:6px;background:#d52941;transform:rotate(45deg);flex-shrink:0;margin:0 8px}
+  .hl{background:linear-gradient(transparent 60%,rgba(213,41,65,0.15) 60%);padding:0 2px}
+  .pullquote{position:relative}
+  .pullquote::before{content:'\201C';position:absolute;top:-12px;left:6px;font-family:'Montserrat',serif;font-size:56px;font-weight:900;color:rgba(213,41,65,0.1);line-height:1;pointer-events:none}
+  .footer::before{content:'';display:block;width:40px;height:2px;background:linear-gradient(90deg,transparent,#d52941,transparent);margin:0 auto 20px}
+  .scenario{border-left:4px solid transparent;border-image:linear-gradient(to bottom,#d52941,rgba(213,41,65,0.12)) 1}
+  .logo img{transition:transform 0.3s ease}
+  .timeline-item::before{box-shadow:0 2px 10px rgba(213,41,65,0.35)}
+  .scarcity{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:#d52941;background:rgba(213,41,65,0.06);border:1.5px solid rgba(213,41,65,0.2);padding:10px 20px;border-radius:30px;margin-bottom:20px}
+  .scarcity-dot{width:8px;height:8px;background:#d52941;border-radius:50%;flex-shrink:0;position:relative}
+  .scarcity-dot::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid #d52941;animation:live-pulse 1.5s infinite}
+  @keyframes live-pulse{0%{transform:scale(1);opacity:0.6}100%{transform:scale(2.1);opacity:0}}
+  .scroll-indicator{display:flex;justify-content:center;padding:8px 0 16px}
+  .scroll-line{width:2px;height:40px;background:linear-gradient(to bottom,#d52941,transparent);border-radius:1px;animation:scroll-bounce 2s ease-in-out infinite}
+  @keyframes scroll-bounce{0%,100%{transform:translateY(0);opacity:0.7}50%{transform:translateY(8px);opacity:1}}
+  .card h2,.card h3{letter-spacing:-0.5px}
+  .badge-sm,.hero-badge,.scenario .label,.cost-card .label{letter-spacing:2.5px}
+  .card p,.item .content p{letter-spacing:0.3px}
+  .fade-in{opacity:0;transform:translateY(36px);transition:opacity 0.8s cubic-bezier(.22,.61,.36,1),transform 0.8s cubic-bezier(.22,.61,.36,1)}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="progress-bar"></div>
+<div class="container">
+
+  <div class="logo"><img src="https://i.ibb.co/qMbztMFZ/R-1.png" alt="Reconnexion Sécure"></div>
+
+  <div class="hero">
+    <div class="hero-badge">On se parle bientôt</div>
+    <h1>Ce que ça te coûte<br><span>de ne rien faire.</span></h1>
+    <p class="hero-sub">Tu réfléchis au prix du programme.<br>Calcule d'abord <span class="hl">le prix de l'inaction.</span></p>
+  </div>
+
+  <div class="divider"><span class="divider-diamond"></span></div>
+  <div class="scroll-indicator"><div class="scroll-line"></div></div>
+
+  <!-- ============ CHAPITRE 1 : LE CALCUL ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 1</div>
+    <h2>Un calcul que tu n'as jamais fait</h2>
+    <p>Ta visio de candidature approche. Avant, je veux que tu fasses un exercice honnête.</p>
+    <p>Depuis combien de temps tu souffres ? Pas "depuis la rupture" — depuis le <strong>moment exact</strong> où ta vie a basculé. Où tu as commencé à ne plus dormir. À ne plus manger. À ne plus fonctionner normalement.</p>
+    <p>Combien de semaines ? Combien de mois ?</p>
+    <p>Maintenant, multiplie ça par un jour type :</p>
+
+    <div class="cost-card">
+      <div class="label">Ta facture quotidienne invisible</div>
+
+      <div class="cost-line">
+        <div class="emoji">🌙</div>
+        <div class="text">
+          <strong>Sommeil détruit</strong>
+          <p>3-4 heures par nuit. Réveils à 2h, 4h, 6h. Cerveau en boucle. Tu te lèves épuisé. Chaque matin.</p>
+        </div>
+      </div>
+
+      <div class="cost-line">
+        <div class="emoji">💼</div>
+        <div class="text">
+          <strong>Performance au travail</strong>
+          <p>Présent physiquement. Absent mentalement. Tu gères des équipes, des projets, des responsabilités — et tu n'arrives pas à te concentrer plus de 20 minutes. Combien de décisions ratées ? D'opportunités manquées ? De journées gaspillées ?</p>
+        </div>
+      </div>
+
+      <div class="cost-line">
+        <div class="emoji">📱</div>
+        <div class="text">
+          <strong>Heures perdues à ruminer</strong>
+          <p>Checker son profil. Relire les messages. Analyser ses stories. Rédiger des messages que tu n'envoies pas. Combien d'heures par jour ? 2 ? 4 ? 6 ? Multiplie par le nombre de jours.</p>
+        </div>
+      </div>
+
+      <div class="cost-line">
+        <div class="emoji">🏋️</div>
+        <div class="text">
+          <strong>Corps en survie</strong>
+          <p>Perte de poids. Cortisol en permanence. Mâchoire serrée. Nœud dans l'estomac. Ton corps paie la facture de ton anxiété — et tu le sais parce que tu te vois dans le miroir.</p>
+        </div>
+      </div>
+
+      <div class="cost-line">
+        <div class="emoji">👤</div>
+        <div class="text">
+          <strong>Isolement</strong>
+          <p>Tu n'en parles à personne. Trop de honte. Trop de peur du jugement. "Comment un homme comme moi peut être dans cet état ?" Tes amis te voient sourire. Personne ne sait ce que tu vis à 2h du matin.</p>
+        </div>
+      </div>
+
+      <div class="cost-line">
+        <div class="emoji">🪞</div>
+        <div class="text">
+          <strong>Image de toi</strong>
+          <p>Tu ne te reconnais plus. L'homme confiant, en contrôle, respecté — il a disparu. À sa place, un homme qui check son téléphone compulsivement, qui pleure dans sa voiture, qui ne peut pas regarder une photo d'elle sans que tout s'effondre.</p>
+        </div>
+      </div>
+
+      <div class="cost-total">
+        <p>Ça, tu le paies déjà. Tous les jours. Depuis des semaines.</p>
+      </div>
+    </div>
+
+    <p><strong>Mets un prix sur ça.</strong> Pas un prix symbolique. Un vrai prix. En heures perdues. En qualité de vie. En opportunités manquées. En santé sacrifiée.</p>
+  </div>
+
+  <!-- ============ CHAPITRE 2 : LA PROJECTION ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 2</div>
+    <h2>Dans 3 mois, si rien ne change</h2>
+    <p>Projette-toi. Honnêtement. Pas dans le scénario idéal. Dans le scénario <strong>réaliste</strong> — celui où tu continues à faire exactement ce que tu fais aujourd'hui.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">Semaine 1 → 4</div>
+        <p>Tu alternes entre espoir et désespoir. Un jour tu es convaincu que c'est fini, le lendemain elle envoie un signe et tout recommence. Tu regardes encore des vidéos sur l'attachement. Tu te dis "cette fois je vais faire différemment." Tu fais pareil.</p>
+        <p>Tu ne dors toujours pas. Tu perds du poids. Tes amis commencent à remarquer que quelque chose ne va pas. Tu dis "ça va, c'est juste le boulot."</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="time">Mois 2</div>
+        <p><strong>Elle s'habitue à vivre sans toi.</strong> Ce que tu interprètes comme de la distance devient sa nouvelle normalité. Le lien émotionnel — celui qui te gardait en vie — commence à s'estomper. Pas parce qu'elle ne ressent plus rien. Parce que son système nerveux s'adapte à ton absence.</p>
+        <p>La fenêtre de reconnexion se referme doucement. Et tu ne le vois pas, parce que tu es trop occupé à ruminer.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="time">Mois 3</div>
+        <p>Deux scénarios possibles. <strong>Scénario A :</strong> elle rencontre quelqu'un d'autre. Pas forcément mieux que toi — juste quelqu'un qui ne déclenche pas sa peur. Une "relation pansement" qui devient sa nouvelle routine.</p>
+        <p><strong>Scénario B :</strong> elle ne revient pas, et toi tu commences une nouvelle relation — mais avec le même schéma anxieux non résolu. Et ça recommence. Avec une autre femme, les mêmes réflexes, les mêmes erreurs.</p>
+        <p><strong>Parce que sans transformation, le schéma se répète. Pas peut-être. Systématiquement.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>Le problème n'est pas<br>que tu souffres aujourd'hui.<br><span>C'est que dans 3 mois,<br>tu souffriras exactement pareil.</span></p>
+  </div>
+
+  <!-- ============ CHAPITRE 3 : CE QUE TU PERDS ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 3</div>
+    <h2>Les 5 choses que l'inaction te coûte (et que tu sous-estimes)</h2>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>1. <span class="hl">La fenêtre de reconnexion</span></strong>
+        <p>Il existe une fenêtre — un laps de temps après la rupture — où le lien émotionnel est encore suffisamment fort pour reconstruire. Cette fenêtre n'est pas éternelle. Chaque semaine qui passe sans transformation de ta part, elle se ferme un peu plus. Pas parce qu'elle ne t'aime plus — parce que son système nerveux s'adapte à ton absence.</p>
+        <p>Les hommes qui récupèrent leur ex ont un point commun : <strong>ils ont agi pendant la fenêtre, pas après.</strong></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>2. Ton identité</strong>
+        <p>Avant elle, tu étais quelqu'un. Un leader. Un homme confiant. Quelqu'un de respecté. Depuis cette rupture, tu ne te reconnais plus. Et chaque semaine que tu passes dans cet état renforce une nouvelle identité : celle de l'homme qui a perdu le contrôle.</p>
+        <p>Plus tu restes là, plus cette version de toi devient permanente. Les gens autour de toi commencent à te voir comme "celui qui ne s'en remet pas". Et toi-même, tu commences à y croire.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>3. Ton ancrage neurologique</strong>
+        <p>L'anxiété n'est pas statique. Elle s'enracine. Chaque jour que tu passes à ruminer, à checker, à analyser — ton cerveau renforce les circuits neuronaux de l'anxiété. Littéralement : les connexions deviennent plus fortes, plus rapides, plus automatiques.</p>
+        <p>Au bout de 3 mois, ton seuil de déclenchement est plus bas qu'aujourd'hui. Ce qui te fait paniquer maintenant en 30 secondes te fera paniquer en 5 secondes. Le cycle s'accélère.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>4. Tes futures relations</strong>
+        <p>Si tu ne résous pas ce schéma maintenant, il se reproduira. Pas peut-être — à 100%. La prochaine femme qui active ton système d'attachement déclenchera exactement les mêmes réflexes. Les mêmes messages de trop. La même hypervigilance. La même spirale. Tu n'auras pas changé de partenaire. Tu auras changé de visage sur le même problème.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>5. Le temps</strong>
+        <p>C'est la ressource la plus précieuse. Et c'est celle que tu gaspilles le plus. Combien d'heures par jour passes-tu à ruminer ? 3 heures ? 5 heures ? Multiplie par 90 jours. Ça fait entre 270 et 450 heures. Soit 11 à 19 jours complets de ta vie. Passés à regarder son profil Instagram et à relire des messages.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHAPITRE 4 : L'HOMME QUI A ATTENDU ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 4</div>
+    <h2>Ceux qui ont attendu — et ce que ça leur a coûté</h2>
+
+    <div class="scenario">
+      <div class="label">L'homme qui a attendu 4 mois</div>
+      <p>Il avait les moyens. Il avait vu mon contenu. Il savait que l'accompagnement pouvait l'aider. Mais il s'est dit : "Je vais d'abord essayer seul."</p>
+      <p>4 mois plus tard, il a commencé le programme. La première chose qu'il m'a dite :</p>
+      <p style="font-style:italic;color:#d52941;font-weight:500;">"Je m'en veux de ne pas avoir commencé plus tôt."</p>
+      <p>Pendant ces 4 mois : elle s'est habituée à vivre sans lui. Son anxiété s'est enracinée. Il a perdu du temps, de l'énergie, et surtout — des opportunités de reconnexion qui ne reviendraient pas.</p>
+      <p><strong>Il a fini par récupérer son ex. Mais ça aurait pu arriver 4 mois plus tôt. Et ça a été 4 mois plus difficile.</strong></p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">L'homme qui a attendu "le bon moment"</div>
+      <p>"Je vais attendre de me sentir prêt." "Je vais attendre qu'elle envoie un signe." "Je vais attendre que les choses se calment."</p>
+      <p>Le "bon moment" n'est jamais arrivé. Parce que le bon moment, <strong>c'est celui où tu décides d'agir indépendamment de ce que tu ressens.</strong> Pas quand tu te sens "prêt" — mais quand tu refuses de continuer comme ça.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">L'homme qui a essayé seul</div>
+      <p>Il a regardé 200 vidéos. Lu 3 livres. Suivi 15 comptes Instagram. Il connaissait la théorie mieux que la plupart des coaches.</p>
+      <p>Résultat : exactement le même qu'avant. Parce que la connaissance sans cadre d'application, c'est de l'information stockée — pas de la transformation vécue.</p>
+      <p>Quand il a commencé le programme, il m'a dit : <em>"J'ai passé 6 mois à apprendre ce que j'aurais pu transformer en 6 semaines."</em></p>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>Le programme a un prix.<br><span>L'inaction coûte<br>beaucoup plus cher.</span></p>
+  </div>
+
+  <!-- ============ CHAPITRE 5 : CEUX QUI ONT BOUGÉ ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 5</div>
+    <h2>Ceux qui n'ont pas attendu</h2>
+
+    <div class="scenario">
+      <div class="label">Samuel — 1 mois</div>
+      <p>Messages en rafale. Lettres de 10 pages. Elle s'était complètement fermée. Tout le monde lui disait que c'était fini.</p>
+      <p>Il a décidé d'agir. Pas "quand il se sentirait prêt". Maintenant. En 1 mois, il était devenu sécure. Et elle est revenue. Naturellement. Sans technique. Sans manipulation. Parce que l'homme qui l'avait poursuivie pendant des mois avait disparu — et à sa place, il y avait quelqu'un de stable. Quelqu'un de sûr.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Lucas — 2 semaines</div>
+      <p>Checkait son téléphone toutes les 5 minutes. Mode survie total. Ruminait H24. Incapable de travailler, de dormir, de fonctionner.</p>
+      <p>2 semaines. C'est tout ce qu'il a fallu pour qu'il recréé un lien sécure avec son ex. Pas parce que le programme est magique. Parce qu'il a agi au moment où la fenêtre était encore ouverte.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Julien — 11 jours</div>
+      <p>Des ruptures en boucle. Le même cycle qui se répétait depuis des mois. Chaque fois qu'elle revenait, il s'emballait. Chaque fois, elle repartait.</p>
+      <p>En 11 jours, le cycle s'est arrêté. Définitivement. Parce qu'il a changé le seul élément qu'il contrôlait : lui-même.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Olivier — 5 semaines</div>
+      <p>Convaincu que c'était trop tard. Ça faisait des mois. Elle ne répondait presque plus. Tout son entourage lui avait dit de passer à autre chose.</p>
+      <p>5 semaines. Il n'a pas cherché à la reconquérir. Il a travaillé sur lui. Quand il est redevenu l'homme stable qu'il était, elle l'a senti. Ils se sont retrouvés.</p>
+    </div>
+
+    <p>Chacun pensait que sa situation était trop abîmée. Trop compliquée. Trop tard.</p>
+    <p><strong>Aucun n'avait raison.</strong></p>
+    <p>La différence entre eux et ceux qui restent bloqués ? <strong><span class="hl">Le moment où ils ont décidé d'agir.</span></strong></p>
+  </div>
+
+  <!-- ============ CHAPITRE 6 : LE VRAI CHOIX ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 6</div>
+    <h2>Le vrai choix devant toi</h2>
+
+    <p>Tu ne décides pas <strong>si</strong> tu vas payer.</p>
+    <p>Tu décides <strong>comment</strong> tu vas payer.</p>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>Option A — Tu ne fais rien</strong>
+        <p>Tu continues à souffrir. Tu perds du temps. Tu perds la fenêtre. Tu perds ton identité. Et dans 3 mois, tu es exactement au même endroit — ou pire. Mais tu n'auras pas dépensé d'argent. Tu auras "juste" dépensé ta santé, ton sommeil, ta performance, ta confiance, et peut-être ta relation.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Option B — Tu agis maintenant</strong>
+        <p>Tu investis dans ta transformation. Tu sors du cycle. Tu redeviens l'homme que tu étais — stable, confiant, en contrôle. Et à partir de cette position-là, tout change. Avec elle. Ou avec la prochaine. Mais surtout : avec toi-même.</p>
+      </div>
+    </div>
+
+    <p>L'investissement financier a un montant fixe. Le coût de l'inaction, lui, augmente chaque jour.</p>
+  </div>
+
+  <div class="quote">
+    <p>L'homme que tu étais avant elle —<br>sécure, confiant, stable —<br><span>il est toujours là.</span><br>Il a juste besoin du bon cadre<br>pour revenir.</p>
+  </div>
+
+  <!-- ============ CHAPITRE 7 : LA VRAIE QUESTION ============ -->
+  <div class="card">
+    <div class="badge-sm">Avant ta visio de candidature</div>
+    <h2>La question à te poser maintenant</h2>
+
+    <p>Pas "est-ce que ça va marcher ?" Tu ne peux pas le savoir avant d'avoir commencé.</p>
+    <p>Pas "est-ce que je peux me le permettre ?" Tu te le permets déjà — en souffrance.</p>
+    <p>La seule question qui compte :</p>
+
+    <div class="pullquote">
+      <p>"Est-ce que je suis prêt à continuer comme ça pendant 3 mois de plus ?"</p>
+    </div>
+
+    <p>Si la réponse est non — alors montre-le lors de ta visio. On n'accompagne que 8 personnes par mois. On cherche des hommes qui sont prêts à faire le travail, pas des hommes qui veulent juste en parler.</p>
+
+    <h3>Ce que j'entends à chaque visio</h3>
+    <div class="pullquote">
+      <p>"J'ai tout réussi dans ma vie. Mon business. Ma carrière. Mes amitiés. Mais face à elle, je perds tous mes moyens. Et ça, je ne le supporte plus."</p>
+    </div>
+
+    <p>Tu n'es pas venu ici pour perdre. Tu es venu parce que tu sais — au fond — que tu mérites mieux que cette souffrance en boucle.</p>
+    <p>L'homme que tu étais avant cette relation — sécure, confiant, en contrôle — <strong>il n'a pas disparu.</strong> Il est enfoui sous des couches d'anxiété et de peur. Mais il est là.</p>
+    <p><strong>Et c'est lui qu'on va ramener à la surface.</strong></p>
+  </div>
+
+  <div class="divider"><span class="divider-diamond"></span></div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="scarcity"><span class="scarcity-dot"></span> 8 places par mois</div>
+    <p class="big">Arrive préparé.<br>Arrive lucide.<br>Arrive en sachant<br>ce que tu veux vraiment.</p>
+    <p>Cette visio détermine si tu en fais partie. Montre-nous que tu es prêt à faire le travail — pas juste à souffrir en silence.</p>
+
+    <p style="font-size:18px;margin-top:24px;"><strong>À tout à l'heure.</strong></p>
+  </div>
+
+  <div class="footer">
+    <div class="logo" style="padding:0 0 12px"><img src="https://i.ibb.co/qMbztMFZ/R-1.png" alt="Reconnexion Sécure"></div>
+    <p class="name">Charlotte Billioque</p>
+    <p>Coach en reconquête amoureuse<br>Spécialiste dans les dynamiques d'attachement anxieux/évitant</p>
+  </div>
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.card,.quote,.pullquote,.cta,.pillar,.cost-card,.video-card,.stat-row').forEach(function(el){el.classList.add('fade-in')});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+  var bar=document.querySelector('.progress-bar');
+  window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=Math.min(100,(window.scrollY/h*100))+'%'});
+});
+</script>
+</body>
+</html>

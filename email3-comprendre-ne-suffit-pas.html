@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pourquoi comprendre ne suffit pas — Charlotte Billioque</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Lato',sans-serif;background:#ffd1d1;color:#000;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .container{max-width:440px;margin:0 auto;padding:0 20px}
+  .hero{padding:40px 0 24px;text-align:center}
+  .hero-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:#d52941;padding:8px 20px;border-radius:30px;margin-bottom:28px}
+  .hero h1{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;line-height:1.2;color:#000;margin-bottom:20px}
+  .hero h1 span{color:#d52941}
+  .hero-sub{font-size:17px;color:#333;line-height:1.6}
+  .divider{width:60px;height:3px;background:#d52941;margin:24px auto;border-radius:2px}
+  .card{background:#fff;border-radius:16px;padding:28px 22px;margin:18px 0;border:2px solid #000}
+  .card h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;line-height:1.3;color:#000;margin-bottom:18px}
+  .card h3{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;line-height:1.3;color:#000;margin-bottom:14px}
+  .card p{font-size:16px;color:#222;margin-bottom:16px;line-height:1.75}
+  .card p:last-child{margin-bottom:0}
+  .card p strong{color:#000;font-weight:700}
+  .card ul{margin:12px 0 16px 20px}
+  .card ul li{font-size:15px;color:#222;line-height:1.7;margin-bottom:8px}
+  .quote{background:#fff;border:2px solid #000;border-radius:16px;padding:24px 22px;margin:18px 0;text-align:center}
+  .quote p{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;line-height:1.5;color:#000;margin-bottom:0}
+  .quote p span{color:#d52941}
+  .quote .author{font-family:'Lato',sans-serif;font-size:13px;font-weight:400;color:#999;margin-top:12px}
+  .pullquote{border-left:4px solid #d52941;padding:18px 22px;margin:24px 0;background:rgba(255,255,255,0.5);border-radius:0 12px 12px 0}
+  .pullquote p{font-size:16px;font-style:italic;color:#000;margin-bottom:0;line-height:1.7}
+  .pullquote .attr{font-style:normal;font-size:13px;color:#666;margin-top:8px}
+  .scenario{background:#f9f5f5;border-radius:14px;padding:24px 22px;margin:20px 0;border-left:4px solid #d52941}
+  .scenario .label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d52941;margin-bottom:10px}
+  .scenario p{font-size:15px;line-height:1.7;color:#222;margin-bottom:10px}
+  .scenario p:last-child{margin-bottom:0}
+  .item{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start}
+  .item .icon{flex-shrink:0;font-size:18px;margin-top:3px}
+  .item .content{flex:1}
+  .item .content strong{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:#000;display:block;margin-bottom:5px}
+  .item .content p{font-size:15px;color:#333;margin-bottom:0;line-height:1.65}
+  .badge-sm{display:inline-block;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d52941;background:rgba(213,41,65,0.1);padding:4px 12px;border-radius:20px;margin-bottom:14px}
+  .versus{display:flex;gap:12px;margin:20px 0}
+  .versus-col{flex:1;padding:20px 16px;border-radius:14px;text-align:center}
+  .versus-col.left{background:#fff;border:2px solid #d52941}
+  .versus-col.right{background:#fff;border:2px solid #000}
+  .versus-col .emoji{font-size:26px;margin-bottom:8px}
+  .versus-col .title{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+  .versus-col.left .title{color:#d52941}
+  .versus-col.right .title{color:#000}
+  .versus-col p{font-size:13px;line-height:1.55;color:#333;margin-bottom:4px}
+  .logo{text-align:center;padding:30px 0 10px}
+  .logo img{width:60px;height:auto}
+  .cta{text-align:center;padding:40px 0 50px}
+  .cta p{font-size:16px;color:#333;margin-bottom:20px;line-height:1.7}
+  .cta .big{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#000;margin-bottom:24px;line-height:1.4}
+  .footer{text-align:center;padding:30px 0 40px}
+  .footer .name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#000;margin-bottom:4px}
+  .footer p{font-size:13px;color:#666;line-height:1.6}
+
+  /* === POLISH V3 === */
+  html{scroll-behavior:smooth}
+  .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#d52941,#ff6b6b);width:0;z-index:9999;box-shadow:0 0 10px rgba(213,41,65,0.5)}
+  .card{box-shadow:0 2px 16px rgba(0,0,0,0.06),0 0 20px rgba(213,41,65,0.06),0 0 40px rgba(213,41,65,0.03)}
+  .quote{box-shadow:0 2px 16px rgba(0,0,0,0.06),0 0 20px rgba(213,41,65,0.06),0 0 40px rgba(213,41,65,0.03);position:relative;overflow:hidden}
+  .quote::before{content:'';position:absolute;top:-60%;right:-60%;width:120%;height:120%;background:radial-gradient(circle,rgba(213,41,65,0.04) 0%,transparent 60%);pointer-events:none}
+  .card,.quote,.pillar,.cost-card,.video-card{transition:transform 0.35s ease,box-shadow 0.35s ease}
+  @media(hover:hover){.card:hover,.quote:hover,.pillar:hover,.cost-card:hover,.video-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1),0 0 30px rgba(213,41,65,0.08)}}
+  @keyframes badge-glow{0%,100%{box-shadow:inset 0 0 6px rgba(213,41,65,0.4),0 4px 16px rgba(213,41,65,0.25)}50%{box-shadow:inset 0 0 6px rgba(213,41,65,0.4),0 6px 28px rgba(213,41,65,0.5)}}
+  .hero-badge{animation:badge-glow 3s ease-in-out infinite}
+  .hero h1{animation:hero-reveal 1s ease-out;letter-spacing:-0.5px}
+  .hero-sub{animation:hero-reveal 1s ease-out 0.2s both}
+  @keyframes hero-reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .hero h1 span{background:linear-gradient(135deg,#d52941 0%,#ff6b6b 50%,#d52941 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
+  @keyframes shimmer{0%{background-position:0% center}50%{background-position:100% center}100%{background-position:0% center}}
+  .cta .big{background:linear-gradient(135deg,#000 30%,#d52941 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .divider{display:flex;align-items:center;justify-content:center;gap:0;width:120px;margin:28px auto;height:auto;background:none;border-radius:0}
+  .divider::before,.divider::after{content:'';flex:1;height:1.5px;background:linear-gradient(90deg,transparent,#d52941)}
+  .divider::after{background:linear-gradient(90deg,#d52941,transparent)}
+  .divider-diamond{width:6px;height:6px;background:#d52941;transform:rotate(45deg);flex-shrink:0;margin:0 8px}
+  .hl{background:linear-gradient(transparent 60%,rgba(213,41,65,0.15) 60%);padding:0 2px}
+  .pullquote{position:relative}
+  .pullquote::before{content:'\201C';position:absolute;top:-12px;left:6px;font-family:'Montserrat',serif;font-size:56px;font-weight:900;color:rgba(213,41,65,0.1);line-height:1;pointer-events:none}
+  .footer::before{content:'';display:block;width:40px;height:2px;background:linear-gradient(90deg,transparent,#d52941,transparent);margin:0 auto 20px}
+  .scenario{border-left:4px solid transparent;border-image:linear-gradient(to bottom,#d52941,rgba(213,41,65,0.12)) 1}
+  .logo img{transition:transform 0.3s ease}
+  .step .num{box-shadow:0 3px 12px rgba(213,41,65,0.3)}
+  .scarcity{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:#d52941;background:rgba(213,41,65,0.06);border:1.5px solid rgba(213,41,65,0.2);padding:10px 20px;border-radius:30px;margin-bottom:20px}
+  .scarcity-dot{width:8px;height:8px;background:#d52941;border-radius:50%;flex-shrink:0;position:relative}
+  .scarcity-dot::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid #d52941;animation:live-pulse 1.5s infinite}
+  @keyframes live-pulse{0%{transform:scale(1);opacity:0.6}100%{transform:scale(2.1);opacity:0}}
+  .scroll-indicator{display:flex;justify-content:center;padding:8px 0 16px}
+  .scroll-line{width:2px;height:40px;background:linear-gradient(to bottom,#d52941,transparent);border-radius:1px;animation:scroll-bounce 2s ease-in-out infinite}
+  @keyframes scroll-bounce{0%,100%{transform:translateY(0);opacity:0.7}50%{transform:translateY(8px);opacity:1}}
+  .card h2,.card h3{letter-spacing:-0.5px}
+  .badge-sm,.hero-badge,.scenario .label{letter-spacing:2.5px}
+  .card p,.item .content p{letter-spacing:0.3px}
+  .fade-in{opacity:0;transform:translateY(36px);transition:opacity 0.8s cubic-bezier(.22,.61,.36,1),transform 0.8s cubic-bezier(.22,.61,.36,1)}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="progress-bar"></div>
+<div class="container">
+
+  <div class="logo"><img src="https://i.ibb.co/qMbztMFZ/R-1.png" alt="Reconnexion Sécure"></div>
+
+  <div class="hero">
+    <div class="hero-badge">Le piège que personne ne voit</div>
+    <h1>Tu sais tout.<br><span>Et ça ne change rien.</span></h1>
+    <p class="hero-sub">La connaissance est un point de départ.<br>Voici pourquoi elle ne sera jamais la destination.</p>
+  </div>
+
+  <div class="divider"><span class="divider-diamond"></span></div>
+  <div class="scroll-indicator"><div class="scroll-line"></div></div>
+
+  <!-- ============ CHAPITRE 1 : LE MIROIR ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 1</div>
+    <h2>Tu es devenu un expert de ta propre souffrance</h2>
+    <p>Tu connais les termes. Anxieux. Évitante. Blessure d'abandon. Désactivation. Protest behavior. Système d'attachement. Fenêtre de tolérance émotionnelle.</p>
+    <p>Tu peux expliquer à n'importe qui pourquoi elle fuit quand ça devient réel. Tu peux décrire ton cycle avec une précision chirurgicale. Tu sais exactement ce qui se passe entre vous.</p>
+    <p>Et hier soir, quand elle n'a pas répondu à ton message pendant 3 heures — <strong>ton cœur s'est emballé exactement comme il y a 3 mois.</strong></p>
+    <p>Tu as ruminé. Tu as checké son profil. Tu as réécrit un message 4 fois avant de l'envoyer. Ou pire — tu l'as envoyé sans réfléchir, et tu l'as regretté dans la seconde.</p>
+
+    <div class="pullquote">
+      <p>"J'ai tout compris et je fais encore les mêmes erreurs."</p>
+    </div>
+
+    <p>C'est la phrase la plus honnête que tu puisses prononcer. Et c'est exactement là que <strong>tout le monde — toi inclus — se trompe.</strong></p>
+    <p>Parce que si comprendre suffisait, tu serais guéri depuis le premier article que tu as lu sur l'attachement anxieux. Si comprendre suffisait, chaque vidéo YouTube que tu as regardée t'aurait transformé. Si comprendre suffisait, les 47 heures que tu as passées à lire sur le sujet auraient résolu le problème.</p>
+    <p><strong>Et tu sais très bien que ce n'est pas le cas.</strong></p>
+  </div>
+
+  <!-- ============ CHAPITRE 2 : LE CERVEAU ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 2</div>
+    <h2>Ton cerveau a deux systèmes. Et ils ne se parlent pas.</h2>
+    <p>Quand elle ne répond pas, il se passe quelque chose de neurologique — pas psychologique. Ton cerveau fonctionne avec deux systèmes complètement séparés :</p>
+
+    <div class="versus">
+      <div class="versus-col left">
+        <div class="emoji">🧠</div>
+        <div class="title">Cortex préfrontal</div>
+        <p>Analyse, raisonne, comprend</p>
+        <p>Connaît Bowlby, Levine, Heller</p>
+        <p>Sait exactement ce qui se passe</p>
+        <p style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:#d52941;margin-top:8px">LENT</p>
+      </div>
+      <div class="versus-col right">
+        <div class="emoji">⚡</div>
+        <div class="title">Amygdale</div>
+        <p>Réagit, protège, panique</p>
+        <p>Décharge d'adrénaline instantanée</p>
+        <p>Mode survie en 0.2 secondes</p>
+        <p style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:18px;color:#000;margin-top:8px">INSTANTANÉ</p>
+      </div>
+    </div>
+
+    <p>Quand ton cerveau détecte une "menace relationnelle" — un message froid, un silence, une annulation — il ne consulte pas tes connaissances avant de réagir.</p>
+    <p><strong>Il court-circuite tout.</strong></p>
+    <p>En 0.2 seconde, ton amygdale envoie une décharge d'adrénaline et de cortisol dans ton corps. Ton rythme cardiaque accélère. Tes mains transpirent. Ton estomac se noue. Ton esprit bascule en mode tunnel : <strong>une seule pensée, en boucle, obsessionnelle.</strong></p>
+    <p>La partie de ton cerveau qui "sait tout" — ton cortex préfrontal — est littéralement éteinte à ce moment-là. Elle ne reprend le contrôle que plusieurs minutes (ou heures) après. C'est-à-dire : <strong>après que tu as déjà envoyé le message, fait l'appel, checké son profil 15 fois.</strong></p>
+    <p>Et c'est là que tu te dis : "Mais je SAVAIS que je ne devais pas faire ça." Oui. Tu savais. Mais la partie de toi qui savait n'était pas aux commandes au moment où il fallait.</p>
+  </div>
+
+  <div class="quote">
+    <p>Comprendre un mécanisme<br><span><span class="hl">ne le désactive pas.</span></span></p>
+  </div>
+
+  <!-- ============ CHAPITRE 3 : LES ANALOGIES ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 3</div>
+    <h2>Pourquoi la connaissance seule ne transforme personne</h2>
+    <p>Voici 5 exemples que tu connais déjà — et qui prouvent exactement ce que tu vis :</p>
+
+    <div class="scenario">
+      <div class="label">L'alcoolique</div>
+      <p>Un alcoolique peut t'expliquer brillamment les mécanismes de l'addiction. La dopamine. Le circuit de récompense. Les déclencheurs. Les conséquences. Il sait tout.</p>
+      <p><strong>Il ouvre quand même la bouteille le soir.</strong></p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Le fumeur</div>
+      <p>Il connaît les statistiques par cœur. Cancer. Poumons. Espérance de vie. Il sait que chaque cigarette lui coûte 11 minutes de vie. Il le sait depuis 15 ans.</p>
+      <p><strong>Il fume encore.</strong></p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Le procrastinateur</div>
+      <p>Il a lu 12 livres sur la productivité. Il connaît la technique Pomodoro, la matrice Eisenhower, le Deep Work. Il sait exactement pourquoi il procrastine.</p>
+      <p><strong>Il est en train de procrastiner en ce moment même.</strong></p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Le sportif blessé</div>
+      <p>Il peut t'expliquer le mécanisme exact de sa blessure au genou. L'anatomie. La biomécanique. Le protocole de rééducation.</p>
+      <p><strong>Ça ne répare pas son genou.</strong> Il faut un kiné. Des exercices. Du travail quotidien sur les muscles, les tendons, les réflexes. Pas des cours d'anatomie.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Toi</div>
+      <p>Tu connais la théorie de l'attachement. Les 4 profils. Le cycle poursuivant-fuyant. La désactivation émotionnelle. Les protest behaviors.</p>
+      <p><strong>Et à 2h du matin, quand elle n'a pas répondu, tu fais exactement ce que tu sais ne pas devoir faire.</strong></p>
+    </div>
+
+    <p>Le point commun ? <strong>Le savoir vit dans le cortex préfrontal. Le comportement vit dans le système nerveux.</strong> Et ces deux-là ne se parlent pas sous stress.</p>
+  </div>
+
+  <!-- ============ CHAPITRE 4 : LA DIFFÉRENCE FONDAMENTALE ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 4</div>
+    <h2>La différence entre changer ce que tu fais et changer ce que tu es</h2>
+    <p>Il y a une distinction fondamentale que personne ne t'a jamais clairement posée :</p>
+
+    <h3>Niveau 1 — Le comportement (ce que tu FAIS)</h3>
+    <p>Tu as arrêté de la relancer compulsivement. Tu lui laisses de l'espace. Tu ne la bombardes plus de messages. Tu ne demandes plus "qu'est-ce qui ne va pas ?" toutes les heures.</p>
+    <p>Tu as coché ses reproches un par un. Bravo. C'est courageux.</p>
+    <p><strong>Et rien n'a changé dans sa façon de réagir à toi.</strong></p>
+
+    <h3>Pourquoi ?</h3>
+    <p>Parce qu'une femme évitante ne réagit pas à ce que tu FAIS. <strong>Elle réagit à ce que tu <span class="hl">RESSENS.</span></strong></p>
+    <p>Elle a un radar extrêmement fin pour détecter la charge émotionnelle derrière un comportement. Quand tu "lui laisses de l'espace" tout en mourant d'anxiété à l'intérieur — en comptant les heures, en espérant que ton silence va déclencher quelque chose — <strong>elle le sent.</strong></p>
+    <p>Même si tes messages ont disparu, l'énergie d'attente, de besoin, de tension est toujours là. Et pour elle, c'est encore plus angoissant qu'avant. Parce que maintenant tu fais semblant. Et l'incongruence — pour une évitante — est la chose la plus repoussante qui existe.</p>
+
+    <h3>Niveau 2 — L'état interne (ce que tu ES)</h3>
+    <p>La vraie transformation, c'est quand tu ne lui "laisses pas de l'espace" — quand tu n'en as plus besoin. Quand tu ne "fais pas le calme" — quand tu ES calme. Quand tu ne "retiens pas ton message" — quand tu n'as plus l'envie de l'envoyer.</p>
+    <p>Ce n'est pas un niveau qu'on atteint en regardant des vidéos. C'est un niveau qu'on atteint en recâblant la façon dont ton système nerveux réagit à l'incertitude.</p>
+
+    <div class="pullquote">
+      <p>"C'est la différence entre mettre un pull parce qu'il fait froid, et régler le chauffage. Elle ne sent pas le pull. Elle sent la température."</p>
+      <div class="attr">— Charlotte Billioque</div>
+    </div>
+
+    <p>Tant que ton thermostat interne est réglé sur l'anxiété — la peur de la perdre, le besoin d'un signe, l'attente permanente — tu auras beau modifier chaque comportement visible, <strong>l'énergie reste identique.</strong></p>
+  </div>
+
+  <div class="quote">
+    <p>Devenir sécure,<br>ce n'est pas corriger<br>une liste de comportements.<br><span>C'est transformer l'état interne<br>qui génère ces comportements.</span></p>
+  </div>
+
+  <!-- ============ CHAPITRE 5 : LES 5 MOMENTS OÙ LE SAVOIR ÉCHOUE ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 5</div>
+    <h2>Les 5 moments où ta connaissance ne sert à rien</h2>
+    <p>Voici les moments précis où tout ce que tu sais s'effondre — et où seul un vrai travail de fond peut faire la différence :</p>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>1. À 2h du matin, quand tu regardes son profil</strong>
+        <p>Tu sais que c'est inutile. Tu sais que ça nourrit l'obsession. Tu sais que ça ne changera rien. Et tu es quand même là, à scroller ses stories, à checker qui a liké ses photos, à analyser chaque pixel de sa dernière publication. Ton cortex préfrontal est endormi. Ton amygdale pilote tout.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>2. Quand elle envoie un message ambigu</strong>
+        <p>"Salut, tu fais quoi ce week-end ?" — Et soudain, tout bascule. Ton cœur accélère. Tu relis le message 8 fois. Tu analyses chaque mot. Tu te demandes si c'est un signe. Tu rédiges 6 réponses différentes avant d'en envoyer une. Puis tu regrettes celle que tu as envoyée. Rien de ce que tu as lu ne t'aide dans ce moment-là.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>3. Quand tu apprends qu'elle voit quelqu'un d'autre</strong>
+        <p>Ton monde s'effondre. Ton estomac se retourne. Tu sais — intellectuellement — que c'est probablement une "relation pansement". Tu sais que ça ne signifie pas la fin. Mais ton corps réagit comme si tu étais en train de mourir. Et tu fais exactement ce qu'il ne faut pas faire : tu la contactes, tu demandes des explications, tu deviens celui qu'elle fuit.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>4. Quand elle revient (et que tu sabotes tout)</strong>
+        <p>Elle t'écrit après des semaines de silence. Un message doux. Ouvert. Et au lieu de rester calme — tu t'embales. Tu veux tout récupérer d'un coup. Tu poses trop de questions. Tu montres trop d'enthousiasme. Tu lui fais peur. Et elle se referme. Tu le sais. Tu l'as lu 100 fois. Et tu le refais quand même.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>5. Quand tu es seul le dimanche soir</strong>
+        <p>Le moment où la rumination est la plus forte. Pas de distraction. Pas de travail. Juste toi et tes pensées. Et tes pensées reviennent toujours au même endroit : elle. Ce qu'elle fait. Ce qu'elle ressent. Si elle pense à toi. Aucune vidéo YouTube ne t'a jamais aidé à traverser un dimanche soir.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CHAPITRE 6 : POURQUOI LE SELF-HELP ÉCHOUE ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 6</div>
+    <h2>Ce que YouTube, les livres et les forums ne peuvent pas faire</h2>
+
+    <h3>L'illusion de progrès</h3>
+    <p>Chaque vidéo que tu regardes te donne un pic de soulagement. "Je comprends mieux." "Je vais changer cette fois." Tu te sens mieux pendant 30 minutes. Puis le prochain trigger arrive — et tu es exactement au même point.</p>
+    <p>Ce n'est pas de la transformation. <strong>C'est de la consommation de contenu déguisée en travail sur soi.</strong></p>
+
+    <h3>Le problème du "cas général"</h3>
+    <p>Les vidéos parlent de l'évitante en général. Des réactions anxieuses en général. Mais ton cas n'est pas général. Ton ex n'est pas "une évitante" — c'est une femme spécifique, avec ses blessures spécifiques, son histoire, sa façon particulière de fuir et de revenir.</p>
+    <p>Et ta dynamique avec elle est unique. Les déclencheurs, le timing, l'historique, le niveau de lien résiduel — tout ça change la stratégie. Un conseil générique appliqué à ta situation spécifique peut faire plus de dégâts que pas de conseil du tout.</p>
+
+    <h3>L'absence de feedback en temps réel</h3>
+    <p>Le moment où tu as besoin d'aide, c'est <strong>maintenant</strong>. Quand elle vient d'envoyer un message bizarre. Quand elle vient d'annuler. Quand tu as le doigt sur "envoyer" et que tout en toi te hurle de l'envoyer.</p>
+    <p>Une vidéo que tu as regardée il y a 3 jours ne t'aide pas dans ce moment-là. Ce qui t'aide, c'est quelqu'un qui connaît ton cas, qui comprend ta dynamique, et qui te dit — là, maintenant — : "Pose le téléphone. Voici pourquoi. Voici ce que tu fais à la place."</p>
+
+    <h3>Le piège de la communauté en ligne</h3>
+    <p>Les forums sur l'attachement sont pleins d'hommes qui partagent leur histoire. Le problème : ils sont tous au même stade que toi. Ils analysent. Ils théorisent. Ils se donnent des conseils mutuels — des aveugles qui guident des aveugles. Ce n'est pas de la transformation. C'est de la co-rumination.</p>
+  </div>
+
+  <!-- ============ CHAPITRE 7 : CE QUI TRANSFORME VRAIMENT ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 7</div>
+    <h2>Ce qui transforme réellement (et comment ça fonctionne)</h2>
+    <p>La transformation réelle — celle qui change ce que tu fais au moment où ton corps te hurle de poursuivre — ne se produit pas en regardant des vidéos. Elle se produit dans un cadre précis :</p>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Un travail sur le système nerveux, pas sur l'intellect</strong>
+        <p>Ce qui te contrôle, ce n'est pas ton ignorance — c'est la réponse automatique de ton corps au stress relationnel. On ne change pas ça avec de l'information. On le change avec de la régulation émotionnelle : apprendre à ton système nerveux qu'il peut survivre à l'incertitude sans basculer en mode panique.</p>
+        <p>Concrètement : quand elle ne répond pas, au lieu que ton corps entre en alerte rouge en 0.2 seconde, il reste en zone verte. Pas parce que tu "fais semblant". Parce que ton seuil de tolérance a changé.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Un accompagnement en temps réel</strong>
+        <p>Pas une séance par semaine dans un cabinet. Un suivi qui intervient au moment exact où tu en as besoin. "Elle m'a envoyé ça, qu'est-ce que je fais ?" — et tu reçois une réponse adaptée à TON cas, pas un conseil générique.</p>
+        <p>C'est dans ces micro-moments que tout se joue. Et c'est dans ces micro-moments qu'un accompagnement change tout.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Des actions concrètes, pas des concepts</strong>
+        <p>"À partir d'aujourd'hui, quand elle fait X, tu fais Y — et voici pourquoi son cerveau va réagir différemment." Pas de la théorie. Du terrain. Des choses que tu mets en place dans ta vie réelle, pas dans ta tête.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Un miroir honnête</strong>
+        <p>Quelqu'un qui voit tes angles morts. Qui te dit "là, tu es en train de poursuivre" quand tu crois "lui laisser de l'espace". Qui distingue ta façade de ta réalité émotionnelle. Qui ne te juge pas, mais qui ne te laisse pas non plus t'auto-mentir.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PREUVES ============ -->
+  <div class="card">
+    <div class="badge-sm">Résultats réels</div>
+    <h2>Ils savaient tout, eux aussi</h2>
+
+    <div class="scenario">
+      <div class="label">Lucas — Le théoricien devenu sécure</div>
+      <p>Lucas connaissait la théorie de l'attachement par cœur. Il pouvait citer Bowlby, Levine, Heller. Il avait lu "Attached" trois fois. Il checkait son téléphone toutes les 5 minutes.</p>
+      <p>Son problème n'était pas le manque de connaissance. C'était l'incapacité à utiliser cette connaissance quand son système nerveux paniquait.</p>
+      <p><strong>En 2 semaines d'accompagnement</strong> — pas de nouveaux livres, pas de nouvelles théories — il avait recréé un lien sécure avec son ex. Parce qu'on a travaillé sur son corps, pas sur sa tête.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Julien — Le cycle brisé en 11 jours</div>
+      <p>Julien avait tout lu, tout vu, tout compris. Les ruptures en boucle continuaient. Chaque fois qu'elle revenait, il s'emballait. Chaque fois, elle repartait. Le même schéma, encore et encore.</p>
+      <p><strong>En 11 jours de programme</strong>, il s'est stabilisé. Non pas parce qu'il a appris quelque chose de nouveau — mais parce qu'il a appris à RÉAGIR différemment au moment exact où son corps le poussait à faire pareil. Le cycle s'est arrêté. Définitivement.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Samuel — Du message en rafale au retour naturel</div>
+      <p>Samuel envoyait des lettres de 10 pages. Il "expliquait" son amour avec une éloquence brillante. Il comprenait parfaitement la dynamique — et il la nourrissait en même temps.</p>
+      <p><strong>En 1 mois</strong>, il avait arrêté de poursuivre. Pas en se retenant — en n'en ayant plus besoin. Et elle est revenue. Naturellement. Sans technique. Sans stratégie. Parce que l'espace entre eux était devenu sûr.</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>La question n'est pas<br>"est-ce que tu comprends le problème ?"<br>Tu le comprends.<br><span>La question est : "est-ce que tu es capable<br>de <span class="hl">faire différemment</span> au moment précis<br>où tout en toi te pousse à faire pareil ?"</span></p>
+  </div>
+
+  <!-- ============ CHAPITRE 8 : CE QUE TU PEUX FAIRE ============ -->
+  <div class="card">
+    <div class="badge-sm">Avant ta visio de candidature</div>
+    <h2>Un exercice honnête à faire maintenant</h2>
+
+    <p>Prends 5 minutes. Sérieusement.</p>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Écris tes 3 dernières "rechutes"</strong>
+        <p>Les 3 dernières fois où tu as fait exactement ce que tu savais ne pas devoir faire. Le message de trop. Le check du profil à 2h du matin. La demande de réassurance déguisée. Sois précis : le déclencheur, ce que tu as fait, ce que tu as ressenti après.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Pour chacune, note : "Est-ce que je SAVAIS que je ne devais pas faire ça ?"</strong>
+        <p>La réponse est oui. À chaque fois. Ce qui prouve que ton problème n'est pas un problème de connaissance. C'est un problème de <strong>capacité à agir sous stress émotionnel.</strong></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Amène cette liste à ta visio de candidature</strong>
+        <p>Si tu es sélectionné pour l'accompagnement, ces 3 situations seront exactement le terrain sur lequel on travaille. Pas de la théorie. Tes moments réels. Tes triggers concrets. Montre-nous que tu les as identifiés — c'est ce qui fait la différence entre un homme qui veut vraiment changer et un homme qui veut juste en parler.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="divider-diamond"></span></div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="scarcity"><span class="scarcity-dot"></span> 8 places par mois</div>
+    <p class="big">Cette visio détermine<br>si tu fais partie<br>des prochains.</p>
+    <p>Arrive avec tes 3 rechutes notées. Montre-nous que tu es lucide sur ton schéma — c'est la première preuve qu'on peut t'aider.</p>
+
+    <p style="font-size:14px;color:#666;margin-top:24px;">Continue à lire mes emails — ils te préparent à cette visio.</p>
+  </div>
+
+  <div class="footer">
+    <div class="logo" style="padding:0 0 12px"><img src="https://i.ibb.co/qMbztMFZ/R-1.png" alt="Reconnexion Sécure"></div>
+    <p class="name">Charlotte Billioque</p>
+    <p>Coach en reconquête amoureuse<br>Spécialiste dans les dynamiques d'attachement anxieux/évitant</p>
+  </div>
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.card,.quote,.pullquote,.cta,.pillar,.cost-card,.video-card,.stat-row').forEach(function(el){el.classList.add('fade-in')});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+  var bar=document.querySelector('.progress-bar');
+  window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=Math.min(100,(window.scrollY/h*100))+'%'});
+});
+</script>
+</body>
+</html>

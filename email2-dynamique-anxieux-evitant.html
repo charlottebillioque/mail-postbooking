@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La dynamique anxieux-évitant décryptée — Charlotte Billioque</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Lato',sans-serif;background:#ffd1d1;color:#000;line-height:1.7;-webkit-font-smoothing:antialiased}
+  .container{max-width:440px;margin:0 auto;padding:0 20px}
+
+  /* HERO */
+  .hero{padding:40px 0 24px;text-align:center}
+  .hero-badge{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#fff;background:#d52941;padding:8px 20px;border-radius:30px;margin-bottom:28px}
+  .hero h1{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;line-height:1.2;color:#000;margin-bottom:20px}
+  .hero h1 span{color:#d52941}
+  .hero-sub{font-size:17px;color:#333;line-height:1.6}
+
+  /* CARDS */
+  .card{background:#fff;border-radius:16px;padding:28px 22px;margin:18px 0;border:2px solid #000}
+  .card h2{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:800;line-height:1.3;color:#000;margin-bottom:18px}
+  .card h3{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;line-height:1.3;color:#000;margin-bottom:14px}
+  .card p{font-size:16px;color:#222;margin-bottom:16px;line-height:1.75}
+  .card p:last-child{margin-bottom:0}
+  .card p strong{color:#000;font-weight:700}
+  .card ul{margin:12px 0 16px 20px}
+  .card ul li{font-size:15px;color:#222;line-height:1.7;margin-bottom:8px}
+
+  /* DIVIDER */
+  .divider{width:60px;height:3px;background:#d52941;margin:24px auto;border-radius:2px}
+
+  /* QUOTE */
+  .quote{background:#fff;border:2px solid #000;border-radius:16px;padding:24px 22px;margin:18px 0;text-align:center}
+  .quote p{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;line-height:1.5;color:#000;margin-bottom:0}
+  .quote p span{color:#d52941}
+  .quote .author{font-family:'Lato',sans-serif;font-size:13px;font-weight:400;color:#999;margin-top:12px}
+
+  /* INLINE QUOTE */
+  .pullquote{border-left:4px solid #d52941;padding:18px 22px;margin:24px 0;background:rgba(255,255,255,0.5);border-radius:0 12px 12px 0}
+  .pullquote p{font-size:16px;font-style:italic;color:#000;margin-bottom:0;line-height:1.7}
+  .pullquote .attr{font-style:normal;font-size:13px;color:#666;margin-top:8px}
+
+  /* VERSUS */
+  .versus{display:flex;gap:12px;margin:20px 0}
+  .versus-col{flex:1;padding:20px 16px;border-radius:14px;text-align:center}
+  .versus-col.left{background:#fff;border:2px solid #d52941}
+  .versus-col.right{background:#fff;border:2px solid #000}
+  .versus-col .emoji{font-size:26px;margin-bottom:8px}
+  .versus-col .title{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+  .versus-col.left .title{color:#d52941}
+  .versus-col.right .title{color:#000}
+  .versus-col p{font-size:13px;line-height:1.55;color:#333;margin-bottom:4px}
+
+  /* MECHANISM STEPS */
+  .step{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
+  .step .num{flex-shrink:0;width:34px;height:34px;background:#d52941;color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .step .text{font-size:15px;line-height:1.65;color:#222}
+  .step .text strong{display:block;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:#000;margin-bottom:4px}
+  .arrow{text-align:center;font-size:20px;color:#d52941;margin:-8px 0}
+
+  /* SCENARIO */
+  .scenario{background:#f9f5f5;border-radius:14px;padding:24px 22px;margin:20px 0;border-left:4px solid #d52941}
+  .scenario .label{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d52941;margin-bottom:10px}
+  .scenario p{font-size:15px;line-height:1.7;color:#222;margin-bottom:10px}
+  .scenario p:last-child{margin-bottom:0}
+
+  /* NUMBERED ITEMS */
+  .item{display:flex;gap:16px;margin-bottom:22px;align-items:flex-start}
+  .item .icon{flex-shrink:0;font-size:18px;margin-top:3px}
+  .item .content{flex:1}
+  .item .content strong{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;color:#000;display:block;margin-bottom:5px}
+  .item .content p{font-size:15px;color:#333;margin-bottom:0;line-height:1.65}
+
+  /* BADGE INLINE */
+  .badge-sm{display:inline-block;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d52941;background:rgba(213,41,65,0.1);padding:4px 12px;border-radius:20px;margin-bottom:14px}
+
+  /* CTA */
+  /* LOGO */
+  .logo{text-align:center;padding:30px 0 10px}
+  .logo img{width:60px;height:auto}
+
+  .cta{text-align:center;padding:40px 0 50px}
+  .cta p{font-size:16px;color:#333;margin-bottom:20px;line-height:1.7}
+  .cta .big{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#000;margin-bottom:24px;line-height:1.4}
+
+  /* FOOTER */
+  .footer{text-align:center;padding:30px 0 40px}
+  .footer .name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#000;margin-bottom:4px}
+  .footer p{font-size:13px;color:#666;line-height:1.6}
+
+  /* === POLISH V3 === */
+  html{scroll-behavior:smooth}
+  .progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#d52941,#ff6b6b);width:0;z-index:9999;box-shadow:0 0 10px rgba(213,41,65,0.5)}
+  .card{box-shadow:0 2px 16px rgba(0,0,0,0.06),0 0 20px rgba(213,41,65,0.06),0 0 40px rgba(213,41,65,0.03)}
+  .quote{box-shadow:0 2px 16px rgba(0,0,0,0.06),0 0 20px rgba(213,41,65,0.06),0 0 40px rgba(213,41,65,0.03);position:relative;overflow:hidden}
+  .quote::before{content:'';position:absolute;top:-60%;right:-60%;width:120%;height:120%;background:radial-gradient(circle,rgba(213,41,65,0.04) 0%,transparent 60%);pointer-events:none}
+  .card,.quote,.pillar,.cost-card,.video-card{transition:transform 0.35s ease,box-shadow 0.35s ease}
+  @media(hover:hover){.card:hover,.quote:hover,.pillar:hover,.cost-card:hover,.video-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.1),0 0 30px rgba(213,41,65,0.08)}}
+  @keyframes badge-glow{0%,100%{box-shadow:inset 0 0 6px rgba(213,41,65,0.4),0 4px 16px rgba(213,41,65,0.25)}50%{box-shadow:inset 0 0 6px rgba(213,41,65,0.4),0 6px 28px rgba(213,41,65,0.5)}}
+  .hero-badge{animation:badge-glow 3s ease-in-out infinite}
+  .hero h1{animation:hero-reveal 1s ease-out;letter-spacing:-0.5px}
+  .hero-sub{animation:hero-reveal 1s ease-out 0.2s both}
+  @keyframes hero-reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  .hero h1 span{background:linear-gradient(135deg,#d52941 0%,#ff6b6b 50%,#d52941 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s ease-in-out infinite}
+  @keyframes shimmer{0%{background-position:0% center}50%{background-position:100% center}100%{background-position:0% center}}
+  .cta .big{background:linear-gradient(135deg,#000 30%,#d52941 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .divider{display:flex;align-items:center;justify-content:center;gap:0;width:120px;margin:28px auto;height:auto;background:none;border-radius:0}
+  .divider::before,.divider::after{content:'';flex:1;height:1.5px;background:linear-gradient(90deg,transparent,#d52941)}
+  .divider::after{background:linear-gradient(90deg,#d52941,transparent)}
+  .divider-diamond{width:6px;height:6px;background:#d52941;transform:rotate(45deg);flex-shrink:0;margin:0 8px}
+  .hl{background:linear-gradient(transparent 60%,rgba(213,41,65,0.15) 60%);padding:0 2px}
+  .pullquote{position:relative}
+  .pullquote::before{content:'\201C';position:absolute;top:-12px;left:6px;font-family:'Montserrat',serif;font-size:56px;font-weight:900;color:rgba(213,41,65,0.1);line-height:1;pointer-events:none}
+  .footer::before{content:'';display:block;width:40px;height:2px;background:linear-gradient(90deg,transparent,#d52941,transparent);margin:0 auto 20px}
+  .scenario{border-left:4px solid transparent;border-image:linear-gradient(to bottom,#d52941,rgba(213,41,65,0.12)) 1}
+  .logo img{transition:transform 0.3s ease}
+  .step .num{box-shadow:0 3px 12px rgba(213,41,65,0.3)}
+  .scarcity{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:#d52941;background:rgba(213,41,65,0.06);border:1.5px solid rgba(213,41,65,0.2);padding:10px 20px;border-radius:30px;margin-bottom:20px}
+  .scarcity-dot{width:8px;height:8px;background:#d52941;border-radius:50%;flex-shrink:0;position:relative}
+  .scarcity-dot::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid #d52941;animation:live-pulse 1.5s infinite}
+  @keyframes live-pulse{0%{transform:scale(1);opacity:0.6}100%{transform:scale(2.1);opacity:0}}
+  .scroll-indicator{display:flex;justify-content:center;padding:8px 0 16px}
+  .scroll-line{width:2px;height:40px;background:linear-gradient(to bottom,#d52941,transparent);border-radius:1px;animation:scroll-bounce 2s ease-in-out infinite}
+  @keyframes scroll-bounce{0%,100%{transform:translateY(0);opacity:0.7}50%{transform:translateY(8px);opacity:1}}
+  .card h2,.card h3{letter-spacing:-0.5px}
+  .badge-sm,.hero-badge,.scenario .label{letter-spacing:2.5px}
+  .card p,.item .content p{letter-spacing:0.3px}
+  .fade-in{opacity:0;transform:translateY(36px);transition:opacity 0.8s cubic-bezier(.22,.61,.36,1),transform 0.8s cubic-bezier(.22,.61,.36,1)}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<div class="progress-bar"></div>
+<div class="container">
+
+  <div class="logo"><img src="https://i.ibb.co/qMbztMFZ/R-1.png" alt="Reconnexion Sécure"></div>
+
+  <div class="hero">
+    <div class="hero-badge">Guide complet</div>
+    <h1>La dynamique<br>anxieux / évitant<br><span>décryptée.</span></h1>
+    <p class="hero-sub">Tout ce que tu vis avec elle a une explication.<br>Voici la carte complète du mécanisme.</p>
+  </div>
+
+  <div class="divider"><span class="divider-diamond"></span></div>
+  <div class="scroll-indicator"><div class="scroll-line"></div></div>
+
+  <!-- ============ PARTIE 1 : L'ATTACHEMENT ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 1</div>
+    <h2>Pourquoi cette relation te détruit alors que les autres ne l'ont jamais fait</h2>
+    <p>Tu as eu des relations avant elle. Peut-être même des ruptures douloureuses. Mais rien qui ressemble à ça.</p>
+    <p>Ce n'est pas parce qu'elle est "la bonne". Ce n'est pas parce que c'est "l'amour de ta vie". C'est parce que cette relation a <strong><span class="hl">activé un profil d'attachement</span> que tu ne connaissais pas.</strong></p>
+    <p>Avant elle, tu étais sécure. Confiant. Stable. Tu savais gérer tes relations, tes émotions, ta vie. Tu n'avais jamais perdu le contrôle comme ça.</p>
+    <p>Et puis elle est arrivée. Avec sa chaleur. Sa profondeur. Cette connexion que tu n'avais jamais ressentie. Et juste derrière — sa distance. Son silence. Son imprévisibilité.</p>
+    <p><strong>C'est ce mélange précis — intensité + incertitude — qui a activé ton profil anxieux.</strong></p>
+    <p>Ton cerveau ne distingue pas "elle ne répond pas à mon message" de "je suis en danger". Pour ton système nerveux, c'est la même alerte. Et cette alerte, elle n'a jamais été déclenchée avant, parce qu'aucune femme ne t'avait confronté à ce niveau d'incertitude émotionnelle.</p>
+  </div>
+
+  <!-- LES 4 PROFILS -->
+  <div class="card">
+    <h3>Les 4 profils d'attachement (et où tu te situes)</h3>
+    <p>La théorie de l'attachement, développée par John Bowlby et Mary Ainsworth, identifie 4 façons fondamentales de vivre l'intimité. Tu les as probablement déjà lues quelque part. Mais voici ce que personne ne t'explique : <strong>ces profils ne sont pas fixes.</strong> Ils s'activent ou se désactivent selon le partenaire.</p>
+
+    <div class="scenario">
+      <div class="label">Profil sécure (toi, avant elle)</div>
+      <p>À l'aise dans l'intimité. Capable de donner de l'espace sans paniquer. Confiance naturelle. Communique ses besoins sans drama. Gère les conflits calmement.</p>
+      <p><strong>C'est l'homme que tu étais. Et c'est celui que tu redeviendras.</strong></p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Profil anxieux (toi, depuis elle)</div>
+      <p>Hypervigilance permanente. Besoin de réassurance. Interprétation de chaque micro-signal. Peur de l'abandon activée H24. Incapacité à se concentrer sur autre chose. Check le téléphone compulsivement.</p>
+      <p>Tu ne te reconnais pas. <strong>Personne autour de toi ne te reconnaît.</strong> C'est la preuve que ce profil n'est pas "toi" — c'est un état réactionnel déclenché par la dynamique avec elle.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Profil évitant (elle)</div>
+      <p>Pas une manipulatrice. Pas une femme froide. Pas une perverse narcissique. <strong>Une femme qui a appris que l'intimité est dangereuse.</strong></p>
+      <p>Quand elle se rapproche — quand elle ressent du lien, de la complicité, de la tendresse — son système nerveux s'affole. Pas parce qu'elle ne t'aime pas. Justement parce qu'elle t'aime. Et que l'amour, pour elle, est associé à la vulnérabilité. Et la vulnérabilité, à la douleur.</p>
+      <p>Elle a ses propres blessures. Probablement un parent qui n'était pas émotionnellement disponible. Un apprentissage précoce : "si tu montres tes émotions, tu seras blessée." Alors elle a construit des murs. Et ces murs fonctionnent — jusqu'à ce qu'elle tombe sur quelqu'un qu'elle aime vraiment.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Profil désorganisé</div>
+      <p>Mélange anxieux + évitant. Pas votre cas, mais important de le mentionner pour que tu comprennes : <strong>ta situation n'est pas la plus complexe.</strong> La dynamique anxieux-évitant est la plus fréquente et la mieux documentée. Il existe un chemin précis pour en sortir.</p>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>Tu n'as pas perdu ton ex<br>à cause de ce que tu as fait.<br><span>Tu l'as perdue à cause d'un schéma<br>que tu ne connaissais pas encore.</span></p>
+  </div>
+
+  <!-- ============ PARTIE 2 : LE CYCLE ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 2</div>
+    <h2>Le cycle poursuivant-fuyant : la machine qui détruit ta relation</h2>
+    <p>Ce qui se passe entre toi et elle n'est pas personnel. C'est un cycle documenté, étudié, prévisible. Et une fois que tu le vois, tu ne peux plus ne pas le voir.</p>
+
+    <div class="versus">
+      <div class="versus-col left">
+        <div class="emoji">🔴</div>
+        <div class="title">Toi (poursuivant)</div>
+        <p>Avance, rassure, donne, répare, demande</p>
+      </div>
+      <div class="versus-col right">
+        <div class="emoji">⚫</div>
+        <div class="title">Elle (fuyante)</div>
+        <p>Recule, se ferme, rationalise, disparaît</p>
+      </div>
+    </div>
+
+    <p>Plus tu avances → plus elle recule.<br>Plus elle recule → plus tu paniques.<br>Plus tu paniques → plus tu poursuis.<br>Plus tu poursuis → plus elle fuit.</p>
+    <p><strong>C'est un engrenage. Pas un choix qu'elle fait. Pas une erreur que tu fais. Un système auto-alimenté.</strong></p>
+  </div>
+
+  <!-- LE CYCLE EN DÉTAIL -->
+  <div class="card">
+    <h3>Le cycle complet en 6 phases</h3>
+
+    <div class="step">
+      <div class="num">1</div>
+      <div class="text">
+        <strong>Phase de connexion</strong>
+        Tout va bien. Vous êtes proches. Elle est douce, présente, tactile. Tu te dis "cette fois, c'est bon." Tu baisses la garde. Tu t'investis émotionnellement.
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">
+      <div class="num">2</div>
+      <div class="text">
+        <strong>Le seuil d'intimité est atteint</strong>
+        Le lien devient trop réel pour elle. Sa fenêtre de tolérance émotionnelle est dépassée. Son système nerveux déclenche l'alerte. Ce n'est pas conscient — c'est neurologique. Elle ne décide pas de se fermer. Son corps le fait pour elle.
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">
+      <div class="num">3</div>
+      <div class="text">
+        <strong>La désactivation (ce qu'elle vit)</strong>
+        Elle rationalise : "Je ne suis pas sûre." "J'ai besoin de réfléchir." "C'est peut-être pas le bon moment." Elle prend de la distance. Messages froids. Moins de disponibilité. Annulations. Ce qu'elle fait en réalité : elle protège un cœur qu'elle ne sait pas encore gérer.
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">
+      <div class="num">4</div>
+      <div class="text">
+        <strong>L'activation (ce que tu vis)</strong>
+        Ton système d'alarme se déclenche. Boule au ventre. Pensées en boucle. Check du téléphone. "Qu'est-ce que j'ai fait de mal ?" Tu analyses chaque message, chaque mot, chaque silence. Ton cortisol explose. Tu ne dors plus. Tu ne manges plus. Tu ne penses qu'à ça.
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">
+      <div class="num">5</div>
+      <div class="text">
+        <strong>Le "protest behavior" (ta réaction)</strong>
+        Tu tentes de rétablir le lien. Message. Appel. Lettre. Explication. "Dis-moi ce qui ne va pas." Tu veux comprendre, réparer, rassurer. Ton intention est bonne. L'effet est dévastateur : chaque tentative de rapprochement active sa peur de l'englobement. Tu la confirmes dans son besoin de fuir.
+      </div>
+    </div>
+    <div class="arrow">↓</div>
+    <div class="step">
+      <div class="num">6</div>
+      <div class="text">
+        <strong>Le renforcement du cycle</strong>
+        Elle se ferme encore plus. Tu paniques encore plus. Chaque tour aggrave le schéma. Chaque tour rend le retour plus difficile. Et ce n'est la faute de personne — c'est la dynamique elle-même qui se nourrit d'elle-même.
+      </div>
+    </div>
+
+    <p style="margin-top:20px;"><strong>Et puis un jour — elle part.</strong> Ou elle reste, mais le lien est mort. Le cycle a épuisé les deux.</p>
+  </div>
+
+  <div class="quote">
+    <p>Ce n'est pas sa cruauté.<br>Ce n'est pas ta faiblesse.<br><span>C'est un mécanisme.<br>Et un mécanisme, ça se casse.</span></p>
+  </div>
+
+  <!-- ============ PARTIE 3 : CE QUE TU FAIS SANS SAVOIR ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 3</div>
+    <h2>Les 7 comportements qui la repoussent<br>(même quand tu crois bien faire)</h2>
+    <p>Chacun de ces comportements part d'une bonne intention. Et chacun a l'effet inverse de ce que tu espères. Ce n'est pas une question de volonté — c'est une question de compréhension du fonctionnement de son profil.</p>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>1. Tu la rassures quand elle doute</strong>
+        <p>Quand elle dit "je ne sais pas", tu lui expliques pourquoi ça vaut le coup. Tu argumentes. Tu lui montres les preuves. Tu lui rappelles les bons moments.</p>
+        <p>Ce qu'elle entend : "Il ne respecte pas mon besoin de distance." Chaque tentative de la rassurer lui confirme que tu as besoin d'elle pour être stable — et ça l'étouffe.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>2. Tu vérifies en permanence</strong>
+        <p>"Ça va ?" "Tout va bien entre nous ?" "Tu es sûre ?" Ces questions que tu poses 3 fois par jour lui demandent de porter ton état émotionnel. Tu lui confies ton équilibre. Et elle n'arrive déjà pas à gérer le sien.</p>
+        <p>Ce qu'elle ressent : une pression invisible, constante, épuisante. Comme si elle était responsable de ta stabilité.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>3. Tu "laisses de l'espace" en attendant qu'elle revienne</strong>
+        <p>Tu ne lui écris plus. Mais tu comptes les heures. Tu regardes si elle a vu ta story. Tu espères que ton silence va "déclencher quelque chose". Elle le sent. C'est du silence anxieux déguisé en maturité.</p>
+        <p>Un comportement calme qui cache une tempête intérieure, c'est de l'incongruence. Et l'incongruence est la chose la plus repoussante pour une évitante — elle ne sait pas d'où vient le danger, mais elle sent qu'il est là.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>4. Tu analyses chaque signal</strong>
+        <p>Un emoji en moins dans son message. Un délai de réponse plus long. Elle a liké la photo d'un autre mec. Tu montes un dossier entier à partir de miettes. Et tu agis en fonction de tes interprétations — pas de la réalité.</p>
+        <p>Ton cerveau anxieux est un excellent détective et un terrible juge. Il trouve des indices partout et tire toujours la même conclusion : "elle va partir."</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>5. Tu répares avant qu'elle ne te le demande</strong>
+        <p>Tu anticipes ses besoins. Tu "corrige" tes défauts. Tu changes avant même qu'elle t'en parle. Ça part d'un bon fond — mais ce que tu lui montres, c'est que tu surveilles chaque micro-réaction pour adapter ton comportement. C'est de l'hypervigilance déguisée en prévenance.</p>
+        <p>Elle ne veut pas un homme qui s'adapte en permanence. Elle veut un homme qui est stable indépendamment de ce qu'elle fait.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>6. Tu fais des grandes déclarations</strong>
+        <p>"Je ferais n'importe quoi pour toi." "Tu es la femme de ma vie." "Je vais changer pour toi." Pour une femme évitante, ces mots ne créent pas de la sécurité — ils créent de la pression. Chaque déclaration lui dit : "Je t'ai mise sur un piédestal, et si tu descends, je m'effondre." C'est exactement ce qu'elle fuit.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">❌</div>
+      <div class="content">
+        <strong>7. Tu joues le rôle du sauveur</strong>
+        <p>Tu vois qu'elle a un problème. Tu te donnes une mission : la comprendre, la guérir, la réparer. Mais elle ne voit pas un sauveur. Elle voit un homme qui la traite comme une enfant cassée. Qui projette sur elle un besoin qu'il refuse de voir en lui-même : le besoin d'être utile pour se sentir aimé.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PARTIE 4 : CE QU'ELLE VIT ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 4</div>
+    <h2>Ce qu'elle vit de l'intérieur (et qu'elle ne te dira jamais)</h2>
+    <p>Tu te concentres sur ce qu'elle fait. Son silence. Sa froideur. Ses contradictions. Mais tu ne vois pas ce qu'elle <strong>vit</strong>.</p>
+    <p>Voici ce qui se passe dans la tête et le corps d'une femme évitante quand elle t'aime :</p>
+
+    <div class="scenario">
+      <div class="label">Quand elle se rapproche</div>
+      <p>Elle ressent une chaleur sincère. De la tendresse. De la complicité. Et immédiatement après — de la peur. Son système nerveux associe intimité = vulnérabilité = danger. Elle ne le décide pas. C'est un réflexe appris dans l'enfance.</p>
+      <p>Elle se dit : "Si je m'attache, je vais souffrir." "Si je lui montre mes émotions, il va les utiliser contre moi." "Si je le laisse entrer, je perds le contrôle."</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Quand elle se ferme</div>
+      <p>Ce que tu interprètes comme de l'indifférence, c'est de l'auto-protection. Elle rationalise : "C'est mieux comme ça." "Je ne suis pas faite pour cette relation." "Il mérite mieux." Ce ne sont pas des excuses. C'est son cerveau qui protège un cœur qui ne sait pas rester ouvert.</p>
+      <p>Et pendant qu'elle se ferme — <strong>elle souffre aussi.</strong> Elle ne te le dit pas. Elle ne te le montre pas. Mais elle perd quelqu'un qu'elle aime. Et elle le sait.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Quand elle envoie des signaux contradictoires</div>
+      <p>Un like sur ta photo. Un message "pour savoir". Une story qu'elle sait que tu vas voir. Un "tu me manques" suivi de 3 jours de silence.</p>
+      <p>Ce n'est pas de la manipulation. C'est une femme tiraillée entre deux forces : le besoin de lien (qui la ramène vers toi) et la peur de l'intimité (qui la repousse). Elle oscille. Pas parce qu'elle joue. Parce qu'elle est en guerre avec elle-même.</p>
+      <p><strong>Si elle s'en fichait vraiment, tu ne serais déjà plus là. Pas de messages. Pas de vues. Pas de prétexte. Rideau.</strong></p>
+    </div>
+  </div>
+
+  <div class="pullquote">
+    <p>"Une évitante ne fuit pas la personne. Elle fuit ce qu'elle ressent avec cette personne. Et plus elle ressent fort, plus elle fuit loin."</p>
+    <div class="attr">— Charlotte Billioque</div>
+  </div>
+
+  <!-- ============ PARTIE 5 : NEUROSCIENCES ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 5</div>
+    <h2>Ce qui se passe dans ton cerveau (pourquoi tu n'arrives pas à "passer à autre chose")</h2>
+    <p>Ton entourage te dit : "Arrête d'y penser." "Passe à autre chose." "Y'a d'autres femmes." Ils ne comprennent pas. Ce n'est pas un choix. <strong>C'est neurochimique.</strong></p>
+
+    <h3>L'addiction au lien incertain</h3>
+    <p>Quand une récompense est <strong>imprévisible</strong> — parfois elle est là, parfois elle ne l'est pas — ton cerveau produit plus de dopamine que si la récompense était garantie. C'est le même mécanisme que les machines à sous.</p>
+    <p>Elle répond avec chaleur → pic de dopamine.<br>Elle disparaît → chute brutale.<br>Elle revient → pic encore plus fort.</p>
+    <p>Ton cerveau est littéralement accro au cycle. Pas à elle en tant que personne — <strong>au pattern d'incertitude.</strong> Et chaque cycle renforce la dépendance.</p>
+
+    <h3>Le cortisol et le mode survie</h3>
+    <p>Quand elle ne répond pas, ton cortisol (hormone du stress) explose. Ton corps entre en mode survie — le même mode que si tu étais physiquement en danger. C'est pour ça que :</p>
+    <ul>
+      <li>Tu ne dors plus (ton corps reste en alerte)</li>
+      <li>Tu ne manges plus (digestion coupée en mode survie)</li>
+      <li>Tu ne peux pas te concentrer (toutes les ressources sont dédiées à la "menace")</li>
+      <li>Tu check ton téléphone H24 (recherche compulsive de réassurance)</li>
+    </ul>
+    <p>Ce n'est pas de la faiblesse. <strong>C'est de la biologie.</strong> Et ça ne se résout pas avec de la volonté — ça se résout en régulant le système nerveux.</p>
+
+    <h3>La blessure d'abandon réactivée</h3>
+    <p>Chaque fois qu'elle se ferme, ton cerveau ne traite pas ça comme "ma copine a besoin d'espace." Il traite ça comme : <strong>"Je suis en train d'être abandonné."</strong> C'est une blessure ancienne — peut-être un parent absent, une figure d'attachement imprévisible — qui n'avait jamais été activée parce que tes relations précédentes étaient stables.</p>
+    <p>Elle n'a pas créé cette blessure. Elle l'a révélée. Et c'est en la guérissant — pas en récupérant ton ex — que tu te libères vraiment.</p>
+  </div>
+
+  <div class="quote">
+    <p>Ton cerveau ne cherche pas l'amour.<br><span>Il cherche le connu.<br>Même quand ça fait mal.</span></p>
+  </div>
+
+  <!-- ============ PARTIE 6 : CE QUI CHANGE TOUT ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 6</div>
+    <h2>Le seul levier qui existe (et pourquoi il change tout)</h2>
+    <p>Tu n'as aucune prise sur son évitement. Zéro. Tu ne peux pas la forcer à revenir. Tu ne peux pas la convaincre. Tu ne peux pas "bien agir" pour qu'elle réagisse "bien".</p>
+    <p>Par contre, tu as <strong>100% de contrôle</strong> sur une seule variable : <strong><span class="hl">ta réaction quand elle se ferme.</span></strong></p>
+    <p>Ce que tu fais quand elle ne répond pas. Comment tu te comportes quand tout en toi te hurle de la poursuivre. L'énergie que tu dégages quand elle prend de la distance.</p>
+
+    <h3>Devenir sécure = casser le cycle à la source</h3>
+    <p>Quand tu deviens sécure :</p>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Le poursuivant s'arrête</strong>
+        <p>Pas parce que tu fais "semblant". Parce que tu n'as plus besoin de sa validation pour exister. Tu ne la poursuis plus parce qu'il n'y a plus rien à poursuivre — tu es complet sans sa réponse.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Le fuyant n'a plus rien à fuir</strong>
+        <p>Quand le poursuivant s'arrête, il n'y a plus de pression. Plus de demande. Plus de charge émotionnelle à porter. Et dans cet espace — ce vide sécurisant que tu crées — elle peut enfin respirer. Et commencer à revenir. Pas parce que tu l'as forcée. Parce que l'espace est devenu sûr.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Le cycle se brise</strong>
+        <p>Le cycle a besoin de deux acteurs pour tourner : un poursuivant et un fuyant. Quand tu sors de ton rôle — véritablement, pas en façade — la machine s'arrête. Et quand la machine s'arrête, autre chose peut commencer.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>Elle te redécouvre</strong>
+        <p>L'homme stable, solide, ancré — celui qu'elle a rencontré au début. Pas celui qui envoie 5 messages quand elle ne répond pas. L'homme qui ne la poursuit pas, mais qui est là quand elle choisit de revenir. L'homme avec qui elle peut s'ouvrir sans avoir peur d'être englobée.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PARTIE 7 : PREUVES ============ -->
+  <div class="card">
+    <div class="badge-sm">Résultats réels</div>
+    <h2>Des hommes qui vivaient exactement ce que tu vis</h2>
+
+    <div class="scenario">
+      <div class="label">Samuel — 1 mois</div>
+      <p>Messages en rafale. Lettres de 10 pages. Elle s'était complètement fermée. Lui était convaincu qu'il fallait "tout expliquer" pour qu'elle comprenne. Plus il expliquait, plus elle fuyait.</p>
+      <p>En 1 mois de programme : il a compris le cycle, il a arrêté de poursuivre — pas en façade, en profondeur. Et elle est revenue. Naturellement. Sans technique. Sans manipulation. Parce que l'espace était devenu sûr.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Olivier — 5 semaines</div>
+      <p>Convaincu que c'était trop tard. Ça faisait des mois de silence. Elle ne répondait presque plus. Tout le monde lui disait de passer à autre chose.</p>
+      <p>5 semaines de transformation intérieure. Il n'a pas cherché à la reconquérir. Il a travaillé sur lui. Et quand il est redevenu l'homme stable qu'il était — elle l'a senti. Ils se sont retrouvés.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Lucas — 2 semaines</div>
+      <p>Checkait son téléphone toutes les 5 minutes. Mode survie total. Ruminait H24. Incapable de travailler, de dormir, de fonctionner. Il connaissait la théorie par cœur — ça ne changeait rien.</p>
+      <p>En 2 semaines d'accompagnement, il avait recréé un lien sécure avec son ex. Pas parce qu'il a appris de nouvelles théories. Parce qu'il a transformé son système nerveux.</p>
+    </div>
+
+    <div class="scenario">
+      <div class="label">Thomas — 3ème rendez-vous</div>
+      <p>Hypersensible. Ne comprenait pas pourquoi ses efforts la repoussaient. Faisait tout "bien" — et c'était exactement le problème.</p>
+      <p>Elle est revenue au 3ème rendez-vous après le début du programme. Pas parce qu'il avait changé de technique. Parce qu'il avait changé d'énergie. Et ça, elle l'a senti immédiatement.</p>
+    </div>
+
+    <p>Chacun pensait que sa situation était différente. Trop abîmée. Trop compliquée. Trop tard.</p>
+    <p><strong>Ce qui les a tous changés : ils ont arrêté d'essayer de contrôler son comportement à elle. Et ils ont commencé à transformer le leur.</strong></p>
+  </div>
+
+  <div class="quote">
+    <p>Ce n'est pas ton amour<br>qui va la faire revenir.<br><span>C'est <span class="hl">ta stabilité.</span></span></p>
+  </div>
+
+  <!-- ============ PARTIE 8 : CE QUE TU PEUX FAIRE MAINTENANT ============ -->
+  <div class="card">
+    <div class="badge-sm">Chapitre 7</div>
+    <h2>3 choses que tu peux commencer à faire dès maintenant</h2>
+    <p>En attendant ta visio de candidature, voici 3 premiers pas concrets :</p>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>1. Arrête d'analyser ses signaux</strong>
+        <p>Chaque minute passée à décoder ses stories, ses messages, ses silences renforce ton anxiété. Tu nourris le cycle. La prochaine fois que tu sens l'envie de vérifier — pose le téléphone. Physiquement. Dans une autre pièce. Pas pour qu'elle le remarque. Pour que TON système nerveux apprenne qu'il peut survivre sans sa réponse.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>2. Identifie le moment exact où tu bascules</strong>
+        <p>Il y a un moment précis — un trigger — qui déclenche ta spirale. Un message non répondu. Un ton froid. Une annulation. Note-le. Pas pour le résoudre maintenant — pour le voir. Parce que tant que le trigger est invisible, il te contrôle. Le moment où tu le nommes, tu commences à le maîtriser.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">👉</div>
+      <div class="content">
+        <strong>3. Rappelle-toi qui tu étais avant</strong>
+        <p>L'homme que tu étais avant cette relation — stable, confiant, en contrôle — il n'a pas disparu. Il est enfoui sous des couches d'anxiété et de peur. Mais il est là. Et c'est lui qu'on va ramener à la surface.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"><span class="divider-diamond"></span></div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div class="scarcity"><span class="scarcity-dot"></span> 8 places par mois</div>
+    <p class="big">Ce que tu viens de lire,<br>c'est la carte.<br>Lors de ta visio,<br>on évalue si on peut t'aider.</p>
+    <p>Cette visio sert à déterminer si ton profil correspond aux hommes qu'on peut réellement transformer.</p>
+    <p>Arrive préparé. Montre-nous que tu es prêt à faire le travail — pas juste à en parler.</p>
+
+    <p style="font-size:14px;color:#666;margin-top:24px;">Continue à lire mes emails — chacun éclaire un angle différent de ta situation.</p>
+  </div>
+
+  <div class="footer">
+    <div class="logo" style="padding:0 0 12px"><img src="https://i.ibb.co/qMbztMFZ/R-1.png" alt="Reconnexion Sécure"></div>
+    <p class="name">Charlotte Billioque</p>
+    <p>Coach en reconquête amoureuse<br>Spécialiste dans les dynamiques d'attachement anxieux/évitant</p>
+  </div>
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.card,.quote,.pullquote,.cta,.pillar,.cost-card,.video-card,.stat-row').forEach(function(el){el.classList.add('fade-in')});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -50px 0px'});
+  document.querySelectorAll('.fade-in').forEach(function(el){io.observe(el)});
+  var bar=document.querySelector('.progress-bar');
+  window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=Math.min(100,(window.scrollY/h*100))+'%'});
+});
+</script>
+</body>
+</html>
